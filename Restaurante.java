@@ -1,7 +1,5 @@
 import java.util.*;
-
-
-public class atividadeUm {
+public class Restaurante {
     static Scanner scanner = new Scanner(System.in);
     static ArrayList<ArrayList<String>> pedidos = new ArrayList<ArrayList<String>>();
     static Menu cardapio = new Menu();
@@ -248,15 +246,15 @@ public class atividadeUm {
             if (clientes.exists(codCliente)) {
                 discount = 0.15;
                 System.out.println("Bem vindo cliente " + codCliente +". Aproveite seu desconto");
-                System.out.printf("Total com desconto de %.2f%% -- R$%.2f\n",discount * 100, total * discount);
+                System.out.printf("Total com desconto de %.2f%% -- R$%.2f\n",discount * 100, total * 1-discount);
             }
             else if (pedido.size() >= 3 && pedido.size() < 5) {
                 discount = 0.05;
-                System.out.printf("Total com desconto de %.2f%% -- R$%.2f\n",discount * 100, total * discount);
+                System.out.printf("Total com desconto de %.2f%% -- R$%.2f\n",discount * 100, total * 1-discount);
             }
             else if (pedido.size() >= 5) {
                 discount = 0.1;
-                System.out.printf("Total com desconto de %.2f%% -- R$%.2f\n",discount * 100, total * discount);
+                System.out.printf("Total com desconto de %.2f%% -- R$%.2f\n",discount * 100, total * 1-discount);
             }
             else {
                 System.out.printf("Total sem desconto ------- R$%.2f\n",total);
